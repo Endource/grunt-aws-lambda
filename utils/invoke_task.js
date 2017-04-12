@@ -28,7 +28,7 @@ invokeTask.getHandler = function (grunt) {
             'event': 'event.json',
             'client_context': 'client_context.json',
             'identity': 'identity.json',
-            'env_variables': null
+            'environmentVariables': null
         });
 
         grunt.log.writeln("");
@@ -37,10 +37,10 @@ invokeTask.getHandler = function (grunt) {
 
         var clientContext = null;
 
-        if(options.env_variables) {
-            for(var variable in options.env_variables) {
-                if(options.env_variables.hasOwnProperty(variable)) {
-                    process.env[variable] = options.env_variables[variable];
+        if(options.environmentVariables) {
+            for(var variable in options.environmentVariables) {
+                if(options.environmentVariables.hasOwnProperty(variable)) {
+                    process.env[variable] = options.environmentVariables[variable];
                 }
             }
         }
